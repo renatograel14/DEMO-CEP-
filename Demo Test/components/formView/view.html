@@ -1,0 +1,42 @@
+<div id="viewCEP" data-role="view" data-title="Form" data-layout="main" data-model="app.formView" data-show="app.formView.onShow" data-after-show="app.formView.afterShow">
+    <div id="formViewModel" class="form-view">
+        <form>
+            <ul class="form-content" data-role="listview" data-style="inset">
+                <li class="form-content-item">
+
+
+                    <label>
+
+                        <span>CEP</span>
+
+                        <input data-bind="value: formViewModel.fields.cep" type="text">
+                    </label>
+
+                </li>
+                <li class="form-content-item">
+
+
+                    <label>
+
+                        <span>Logradouro</span>
+
+                        <input data-bind="value: formViewModel.fields.adress" type="text">
+                    </label>
+
+                </li>
+            </ul>
+
+            <div class="button-group">
+            </div>
+        </form>
+        <!-- START_CUSTOM_CODE_formViewModel -->
+        <!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
+
+        <!-- END_CUSTOM_CODE_formViewModel -->
+    </div>
+
+    <!-- START_CUSTOM_CODE_formView -->
+    <!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
+
+    <!-- END_CUSTOM_CODE_formView -->
+</div>

@@ -4,13 +4,67 @@
     {
       "type": "kendo-ui-mobile:view",
       "name": "home",
-      "components": [],
+      "components": [
+        {
+          "type": "kendo-ui-mobile:form",
+          "components": [
+            {
+              "type": "kendo-ui-mobile:field",
+              "name": "cep",
+              "title": "CEP",
+              "inputType": "text",
+              "titlePosition": "left",
+              "placeholder": "Digite o CEP"
+            }
+          ],
+          "name": "homeModel",
+          "submitButton": "Confirm",
+          "cancelButton": "Cancel"
+        }
+      ],
       "title": "Home View",
       "addToNavigation": true,
       "icon": "home"
+    },
+    {
+      "type": "kendo-ui-mobile:view",
+      "name": "formView",
+      "components": [
+        {
+          "type": "kendo-ui-mobile:form",
+          "components": [
+            {
+              "type": "kendo-ui-mobile:field",
+              "name": "cep",
+              "title": "CEP",
+              "inputType": "text",
+              "titlePosition": "left"
+            },
+            {
+              "type": "kendo-ui-mobile:field",
+              "name": "adress",
+              "title": "Logradouro",
+              "inputType": "text",
+              "titlePosition": "left"
+            }
+          ],
+          "name": "formViewModel"
+        }
+      ],
+      "title": "Form",
+      "addToNavigation": true,
+      "icon": "bookmarks"
     }
   ],
-  "dataProviders": [],
+  "dataProviders": [
+    {
+      "type": "kendo-ui-mobile:dataProvider",
+      "name": "jsonDataProvider",
+      "title": "JSON Data Service",
+      "source": "json",
+      "url": "https://viacep.com.br/ws/01001000/json/"
+    }
+  ],
   "name": "kendoUiMobileApp",
   "navigation": "tabstrip",
   "view": "home",
