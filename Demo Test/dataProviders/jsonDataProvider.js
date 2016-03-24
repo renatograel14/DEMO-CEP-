@@ -1,8 +1,26 @@
 'use strict';
 
 (function() {
-    app.data.jsonDataProvider = function(cep){
-        return 'https://viacep.com.br/ws/'+ cep + '/json/'
+    app.data.jsonDataProvider = function(){
+        var dataSouce = new kendo.data.DataSource({
+            transport: {
+                read: {
+                    type: 'jsonp',
+                    url: function(options) {
+                        console.log(options);
+                    	return 'https://viacep.com.br/ws/'+ options.cep + '/json/' 
+                    }
+                }
+            },
+            schema: {
+                data: function(data){
+                	console.log(data);
+                    return data;
+                },
+                
+            }
+        });
+        return dataSouce;
     }
 }());
 
