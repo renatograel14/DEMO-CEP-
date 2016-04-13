@@ -18,12 +18,12 @@ app.formView = kendo.observable({
             }
         });
     parent.set('onShow', function (e) {
-        provider.read(e.view.params).then(function () {
-            // var view = this.view();
-            console.log('foo:');
-            // formViewModel.fields.cep = result.cep;
-            // formViewModel.fields.adress = result.logradouro;
-            // kendo.bind($("#viewCEP"), formViewModel);
+        // provider.read(e.view.params).then(function () {});  Utilizando o datasource
+        
+        $.get('https://viacep.com.br/ws/'+ e.view.params.cep + '/json/', function(result){
+        	formViewModel.fields.cep = result.cep;
+            formViewModel.fields.adress = result.logradouro;
+            kendo.bind($("#viewCEP"), formViewModel); 	 
         });
     })
     parent.set('formViewModel', formViewModel);

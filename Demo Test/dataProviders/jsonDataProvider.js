@@ -7,7 +7,6 @@
                 read: {
                     type: 'jsonp',
                     url: function(options) {
-                        console.log(options);
                     	return 'https://viacep.com.br/ws/'+ options.cep + '/json/' 
                     }
                 }
